@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Nouveaux cocktail {% endblock %}
+
+{% block body %}
+    <div>
+        <h1> Nouveau cocktail : </h1>
+        {{ form_start(form) }}
+            {{ form_row(form.label) }}
+            {{ form_row(form.description) }}
+            <button class="submit">Ajouter</button>
+        {{ form_end(form) }}
+        <a href="{{ path('adminCocktail') }}" class="btn btn-primary">Retour</a>
+    </div>
+{% endblock %}

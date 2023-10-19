@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Modification : {{ cocktail.label }} {% endblock %}
+
+{% block body %}
+    <div>
+        <h1> Modification : {{ cocktail.label }} </h1>
+        {{ form_start(form) }}
+            {{ form_row(form.label, {'value': cocktail.label}) }}
+            {{ form_row(form.description, {'value': cocktail.description}) }}
+            <button class="submit">Modifier</button>
+        {{ form_end(form) }}
+        <a href="{{ path('adminCocktail') }}" class="btn btn-primary">Retour</a>
+    </div>
+{% endblock %}

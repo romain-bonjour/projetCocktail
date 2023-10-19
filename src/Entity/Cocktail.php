@@ -20,10 +20,10 @@ class Cocktail
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?bool $active = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?bool $priority = null;
 
     public function getId(): ?int
