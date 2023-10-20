@@ -44,9 +44,8 @@ class CocktailController extends AbstractController
 
     /* SHOW ONE */
     #[Route('/cocktail/seeMore/{id}', name: 'seeMore')]
-    public function show(int $id, CocktailRepository $cocktailRep): Response
+    public function show(Cocktail $cocktail): Response
     {
-        $cocktail = $cocktailRep->find($id);
         return $this->render('cocktail/seeMore.html.twig', [
             'controller_name' => 'CocktailController',
             'cocktail' => $cocktail,
@@ -76,7 +75,7 @@ class CocktailController extends AbstractController
 
     /* EDIT */
     #[Route('/admin/edit/cocktail/{id}', name: 'editCocktail')]
-    public function edit(int $id, Cocktail $cocktail, Request $request, EntityManagerInterface $em): Response
+    public function edit(Cocktail $cocktail, Request $request, EntityManagerInterface $em): Response
     {
         $form = $this->createForm(CocktailType::class, $cocktail);
         $form->handleRequest($request);

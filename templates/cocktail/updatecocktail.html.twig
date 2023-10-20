@@ -6,8 +6,10 @@
     <div>
         <h1> Modification : {{ cocktail.label }} </h1>
         {{ form_start(form) }}
-            {{ form_row(form.label, {'value': cocktail.label}) }}
-            {{ form_row(form.description, {'value': cocktail.description}) }}
+            {{ form_label(form.label) }}
+            {{ form_widget(form.label) }}
+            {{ form_label(form.description) }}
+            {{ form_widget(form.description) }}
             <button class="submit">Modifier</button>
         {{ form_end(form) }}
         <a href="{{ path('adminCocktail') }}" class="btn btn-primary">Retour</a>

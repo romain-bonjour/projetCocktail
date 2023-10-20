@@ -12,20 +12,8 @@ class CocktailType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('label', TextType::class, [
-            'label' => false,
-            'required' => true,
-            'attr' => [
-                /*'value' => '', Je garde ca pour le cocktail type new  à créer
-                'placeholder' => 'Le nom du cocktail',*/
-                'class' => 'form'],
-            ])
-            ->add('description', TextType::class, [
-                'label' => false,
-                'required' => true,
-                'attr' => [
-                    'class' => 'form'],
-            ]);
+            ->add('label')
+            ->add('description');
     }
 
     public function configureOptions(OptionsResolver $resolver): void
